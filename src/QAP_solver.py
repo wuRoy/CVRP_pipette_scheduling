@@ -6,8 +6,8 @@ pygm.set_backend('numpy') # set default backend for pygmtools
 np.random.seed(42) # fix random seed
 
 def calculate_S_E(jobs):
-    starting_point = np.zeros((jobs.shape[0],96))
-    ending_point = np.zeros((jobs.shape[0],96))
+    starting_point = np.zeros((jobs.shape[0], 96))
+    ending_point = np.zeros((jobs.shape[0], 96))
     for i in range(jobs.shape[0]):
         starting_point[i,jobs[i,0]] = 1
         ending_point[i,jobs[i,1]] = 1
@@ -73,9 +73,9 @@ def CVRP_QAP(jobs,iteration=5):
         
         optimized_seuqnecess = get_optimized_sequence(recorder)
         t = calculate_T(optimized_seuqnecess)
-        D_prime = D_prime[1:,1:]
+        D_prime = D_prime[1:, 1:]
         # cost = trace (T^T * D_prime)
-        cost = np.trace(np.dot(t.T,D_prime))
+        cost = np.trace(np.dot(t.T, D_prime))
         print(f'iter={i}, cost={cost} after CVRP')
         if best_cost > cost:
             best_cost = cost
@@ -83,7 +83,7 @@ def CVRP_QAP(jobs,iteration=5):
             best_recorder = recorder
 
         # construct QAP
-        A = np.dot(np.dot(E.T,t.T),E)
+        A = np.dot(np.dot(E.T, t.T), E)
         B = D
         K = np.kron(1-B, A.T) # transform minimization into maximization
         
