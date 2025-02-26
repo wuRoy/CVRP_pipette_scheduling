@@ -52,7 +52,7 @@ def print_solution_backup(data, manager, routing, solution):
 
 def print_solution(data, manager, routing, solution, print_result=True):
     """Prints solution on console."""
-    print(f"Objective: {solution.ObjectiveValue()}")
+    # print(f"Objective: {solution.ObjectiveValue()}")
     recorder = []
     total_distance = 0
     total_load = 0

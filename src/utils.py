@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def show_matrix(matrix):
-    plt.figure(figsize=(10,10))
+    plt.figure(figsize=(4,4))
     plt.imshow(matrix, cmap='hot', interpolation='nearest')
     plt.show()
 
@@ -126,11 +126,10 @@ def get_optimized_sequence(recorder):
     optimized_seuqneces = np.array(optimized_seuqnece[::-1])
     return optimized_seuqneces
 
-def print_command(flatten_sequence, jobs, fraction, total_volume=20):
+def print_command(flatten_sequence, jobs, total_volume=20):
     '''
         flatten_sequence: the optimized sequence
         jobs: the job pair
-        fraction: the fraction of each job pair
         total_volume: the total volume of the system
     
     '''
@@ -138,11 +137,13 @@ def print_command(flatten_sequence, jobs, fraction, total_volume=20):
     for i in range(flatten_sequence.shape[0]):
     # add the command line base on the index, set the volume as 20ul by default
         command_line.append(
-        ['source',
-        jobs[flatten_sequence[i],0]+1,
-        'dest',
-        jobs[flatten_sequence[i],1]+1,
-        fraction[i]*total_volume]
+            [
+                'source',
+                jobs[flatten_sequence[i],0]+1,
+                'dest',
+                jobs[flatten_sequence[i],1]+1,
+                20
+            ]
         )
     command_line = np.array(command_line) 
     return command_line
