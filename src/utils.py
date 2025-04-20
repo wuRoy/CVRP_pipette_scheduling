@@ -19,17 +19,17 @@ def random_choice(total_elements, chosen_elements):
     np.random.shuffle(a)
     return a
 
-def random_choose_candidate(num_candidate,total_dim,non_zeros_dim): 
+def random_choose_candidate(source_dim,dest_dim,non_zeros_dim): 
     '''
     num_candidate: number of candidate to be chosen
     total_candidate: total number of candidates
     chosen_elements: number of elements to be chosen
     '''
     # repeat the random_choice function for num_candidate times
-    lower_bound = np.zeros(total_dim)
-    upper_bound = np.ones(total_dim)
-    a = np.zeros((num_candidate,total_dim))
-    for i in range(num_candidate):
+    lower_bound = np.zeros(dest_dim)
+    upper_bound = np.ones(dest_dim)
+    a = np.zeros((source_dim,dest_dim))
+    for i in range(source_dim):
         while True:
             candidate = random_choice(total_dim,non_zeros_dim)
             if np.all((candidate >= lower_bound) & (candidate <= upper_bound)):
@@ -37,13 +37,40 @@ def random_choose_candidate(num_candidate,total_dim,non_zeros_dim):
                 break
     return a.round(2)
 
-def calculate_distance_matrix(pos_matrix):
+def calculate_num_rows(labware):
+    '''
+    define the neighborhood of the source and destination labware
+    labware: the labware, could be 12, 24, 96, 384
+    return the criteria of the neighborhood
+    '''
+    if labware not in [12, 24, 96, 384]:
+        raise ValueError("labware should be one of [12, 24, 96, 384]")
+    if labware == 12:
+        return 3
+    elif labware == 24:
+        return 4
+    elif labware == 96:
+        return 8
+    elif labware == 384:
+        return 16
+ 
+
+def calculate_distance_matrix(pos_matrix, source_labware, dest_labware):
+    '''
+    Given a job list, calculate the distance matrix
+    pos_matrix: the job list, a n*2 matrix
+    source_labware: the source labware, could be 12, 24, 96, 384
+    dest_labware: the destination labware, could be 12, 24, 96, 384
+    return the distance matrix
+    '''
     # given a non-zero position matrix, calculate the distance between each pair
+    num_rows_source = calculate_num_rows(source_labware)
+    num_rows_dest = calculate_num_rows(dest_labware)
     distance_matrix = np.zeros((pos_matrix.shape[0], pos_matrix.shape[0]))
     for i in range(pos_matrix.shape[0]):
         for j in range(pos_matrix.shape[0]):
-            is_neighbor_dest = ((pos_matrix[i, 0]//8) == (pos_matrix[j, 0]//8)) and ((abs(pos_matrix[i, 0] - pos_matrix[j, 0]) <=1) and (abs(pos_matrix[i, 0] - pos_matrix[j, 0])>0))
-            is_neighbor_source = ((pos_matrix[i, 1]//8) == (pos_matrix[j, 1]//8)) and ((abs(pos_matrix[i, 1] - pos_matrix[j, 1]) <=1) and (abs(pos_matrix[i, 1] - pos_matrix[j, 1])>0))
+            is_neighbor_source = ((pos_matrix[i, 0]//num_rows_source) == (pos_matrix[j, 0]//num_rows_source)) and ((abs(pos_matrix[i, 0] - pos_matrix[j, 0]) <=1) and (abs(pos_matrix[i, 0] - pos_matrix[j, 0])>0))
+            is_neighbor_dest = ((pos_matrix[i, 1]//num_rows_dest) == (pos_matrix[j, 1]//num_rows_dest)) and ((abs(pos_matrix[i, 1] - pos_matrix[j, 1]) <=1) and (abs(pos_matrix[i, 1] - pos_matrix[j, 1])>0))
             
             if is_neighbor_dest and is_neighbor_source:
                 if (pos_matrix[i, 0]-pos_matrix[j, 0]<0) and (pos_matrix[i, 1]-pos_matrix[j, 1]<0):
@@ -57,13 +84,13 @@ def calculate_distance_matrix(pos_matrix):
                     
             elif is_neighbor_dest or is_neighbor_source:
                 if is_neighbor_dest:
-                    if pos_matrix[i, 0]-pos_matrix[j, 0]<0:
+                    if pos_matrix[i, 1]-pos_matrix[j, 1]<0:
                         distance_matrix[i, j] = 1
                     else:
                         distance_matrix[i, j] = 2
                         
                 if is_neighbor_source:
-                    if pos_matrix[i, 1]-pos_matrix[j, 1]<0:
+                    if pos_matrix[i, 0]-pos_matrix[j, 0]<0:
                         distance_matrix[i, j] = 1
                     else:
                         distance_matrix[i, j] = 2

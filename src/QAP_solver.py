@@ -1,6 +1,7 @@
 import numpy as np
 import pygmtools as pygm
 from src.ortools_solver import CVRP_solver
+from src.utils import calculate_num_rows
 
 pygm.set_backend('numpy') # set default backend for pygmtools
 np.random.seed(42) # fix random seed
@@ -57,7 +58,7 @@ def calculate_T(sequences):
     return zeros
 
 def CVRP_QAP(jobs, iteration=5, inner_cvrp_timewall=2, final_cvrp_timewall=10, ipfp_maxiter=50):
-
+    
     D = np.ones((96,96))
     for i in range(96):
         for j in range(96):
