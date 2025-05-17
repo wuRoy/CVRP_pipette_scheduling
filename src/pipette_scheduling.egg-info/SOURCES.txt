@@ -1,0 +1,5 @@
+setup.py
+src/pipette_scheduling.egg-info/PKG-INFO
+src/pipette_scheduling.egg-info/SOURCES.txt
+src/pipette_scheduling.egg-info/dependency_links.txt
+src/pipette_scheduling.egg-info/top_level.txt

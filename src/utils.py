@@ -6,6 +6,25 @@ def show_matrix(matrix):
     plt.imshow(matrix, cmap='hot', interpolation='nearest')
     plt.show()
 
+def random_choose_candidate_2(source_dim,dest_dim,non_zeros_num):
+    '''
+    num_candidate: number of candidate to be chosen
+    total_candidate: total number of candidates
+    chosen_elements: number of elements to be chosen
+    '''
+    non_zeros =0
+    # repeat the random_choice function for num_candidate times
+    a = np.zeros((source_dim,dest_dim))
+    # randomly choose non_zeros_dim elements in the matrix as 1
+    for i in range(source_dim):
+        for j in range(dest_dim):
+            if np.random.rand() >(1-non_zeros_num/(source_dim*dest_dim)):
+                a[i,j] = np.random.randint(1, 100)
+                non_zeros += 1
+            if non_zeros >= non_zeros_num:
+                break
+    return a
+
 def random_choice(total_elements, chosen_elements):
     '''
     total_elements: total number of elements in the array
@@ -20,6 +39,34 @@ def random_choice(total_elements, chosen_elements):
     return a
 
 def random_choose_candidate(source_dim,dest_dim,non_zeros_dim): 
+    '''
+    num_candidate: number of candidate to be chosen
+    total_candidate: total number of candidates
+    chosen_elements: number of elements to be chosen
+    '''
+    # repeat the random_choice function for num_candidate times
+    a = np.zeros((source_dim,dest_dim))
+    for i in range(source_dim):
+        candidate = random_choice(dest_dim,non_zeros_dim)
+        a[i,:] = candidate
+    return a.round(2)
+
+
+
+def random_choice_backup(total_elements, chosen_elements):
+    '''
+    total_elements: total number of elements in the array
+    chosen_elements: number of elements to be chosen
+    '''
+    a = np.zeros(total_elements)
+    random_vector = np.random.rand(chosen_elements)
+    random_vector = random_vector.round(2)
+    random_vector = random_vector / random_vector.sum(axis=0, keepdims=1)
+    a[:chosen_elements] = random_vector
+    np.random.shuffle(a)
+    return a
+
+def random_choose_candidate_backup(source_dim,dest_dim,non_zeros_dim): 
     '''
     num_candidate: number of candidate to be chosen
     total_candidate: total number of candidates
@@ -43,7 +90,7 @@ def calculate_num_rows(labware):
     labware: the labware, could be 12, 24, 96, 384
     return the criteria of the neighborhood
     '''
-    if labware not in [12, 24, 96, 384]:
+    if labware not in [12, 24, 96, 384,1536]:
         raise ValueError("labware should be one of [12, 24, 96, 384]")
     if labware == 12:
         return 3
@@ -53,8 +100,11 @@ def calculate_num_rows(labware):
         return 8
     elif labware == 384:
         return 16
- 
+    elif labware == 1536:
+        return 64 
+    
 
+# to be deleted
 def calculate_distance_matrix(pos_matrix, source_labware, dest_labware):
     '''
     Given a job list, calculate the distance matrix
@@ -99,7 +149,7 @@ def calculate_distance_matrix(pos_matrix, source_labware, dest_labware):
     distance_matrix = np.vstack((np.zeros(distance_matrix.shape[0]), distance_matrix))
     distance_matrix = np.hstack((np.zeros((distance_matrix.shape[0], 1)), distance_matrix))
     return distance_matrix
-
+# to be deleted
 def pair_distance_calculator(pos1,pos2):
     # given two positions, calculate the distance between them
     is_neighbor_dest = ((pos1[0]//8) == (pos2[0]//8)) and ((abs(pos1[0] - pos2[0]) <=1) and (abs(pos1[0] - pos2[0])>0))
@@ -126,7 +176,7 @@ def pair_distance_calculator(pos1,pos2):
                 return 2
     else:
         return 2
-
+# to be deleted
 def distance_calculator(jobs):
     # calculate the total distance given a list of instructions
     distance_sum = 0
@@ -153,7 +203,7 @@ def get_optimized_sequence(recorder):
     optimized_seuqneces = np.array(optimized_seuqnece[::-1])
     return optimized_seuqneces
 
-def print_command(flatten_sequence, jobs, total_volume=20):
+def print_command(flatten_sequence, jobs, source_name='source',dest_name='dest', total_volume=20):
     '''
         flatten_sequence: the optimized sequence
         jobs: the job pair
@@ -165,9 +215,9 @@ def print_command(flatten_sequence, jobs, total_volume=20):
     # add the command line base on the index, set the volume as 20ul by default
         command_line.append(
             [
-                'source',
+                source_name,
                 jobs[flatten_sequence[i],0]+1,
-                'dest',
+                dest_name,
                 jobs[flatten_sequence[i],1]+1,
                 20
             ]

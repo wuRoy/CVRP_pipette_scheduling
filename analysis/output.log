@@ -1,0 +1,979 @@
+nohup: ignoring input
+/home/yq-mew/yq/chem1906/Projects/pipette_scheduling/src/utils.py:17: RuntimeWarning: invalid value encountered in divide
+  random_vector = random_vector / random_vector.sum(axis=0, keepdims=1)
+labware_combination: [12, 12]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [12, 24]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [12, 96]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [12, 384]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [24, 12]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [24, 24]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [24, 96]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [24, 384]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [96, 12]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [96, 24]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [96, 96]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [96, 384]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [384, 12]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [384, 24]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [384, 96]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+labware_combination: [384, 384]
+repeat: 0
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 1
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 2
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 3
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 4
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
+repeat: 5
+num_candidates=1
+num_candidates=2
+num_candidates=3
+num_candidates=4
+num_candidates=5
+num_candidates=6
+num_candidates=7
+num_candidates=8
+num_candidates=9
