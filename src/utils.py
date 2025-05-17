@@ -65,7 +65,7 @@ def random_choice_backup(total_elements, chosen_elements):
     a[:chosen_elements] = random_vector
     np.random.shuffle(a)
     return a
-
+# to be deleted
 def random_choose_candidate_backup(source_dim,dest_dim,non_zeros_dim): 
     '''
     num_candidate: number of candidate to be chosen
@@ -90,8 +90,8 @@ def calculate_num_rows(labware):
     labware: the labware, could be 12, 24, 96, 384
     return the criteria of the neighborhood
     '''
-    if labware not in [12, 24, 96, 384,1536]:
-        raise ValueError("labware should be one of [12, 24, 96, 384]")
+    if labware not in [12, 24, 96, 384, 1536]:
+        raise ValueError("labware should be one of [12, 24, 96, 384, 1536]")
     if labware == 12:
         return 3
     elif labware == 24:
