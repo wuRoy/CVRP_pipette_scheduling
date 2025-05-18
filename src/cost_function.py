@@ -6,24 +6,19 @@ from utils import calculate_num_rows
 pygm.set_backend('numpy') # set default backend for pygmtools
 np.random.seed(42) # fix random seed
 
-def calculate_S_E(a, P=None):
+def calculate_S_E(a):
     # a the jobs matrix, row is the source, column is the destination
-    if P is not None:
-        a = np.dot(a, P)
+
     a[a>0] = 1
     jobs = np.argwhere(a)
     starting_point = np.zeros((jobs.shape[0], a.shape[0]))
     ending_point = np.zeros((jobs.shape[0], a.shape[1]))
-    ending_map = dict(np.argwhere(P if P is not None else np.eye(a.shape[1])).tolist())
-    new_jobs = []
+    ending_map = dict(np.argwhere(np.eye(a.shape[1])).tolist())
     for i in range(jobs.shape[0]):
         starting_point[i, jobs[i, 0]] = 1
         ending_point[i, ending_map[jobs[i, 1]]] = 1
-        new_jobs.append([jobs[i, 0], ending_map[jobs[i, 1]]])
-    if P is None:
-        return starting_point, ending_point
-    else:
-        return starting_point, ending_point, np.array(new_jobs)
+
+    return starting_point, ending_point
 
 def calculate_D_prime(D_S, D_D, S, E, weight_S=1, weight_D=1):
     # calculate D' = S(D_S)S^T + E(D_D)E^T
@@ -86,7 +81,7 @@ def calculate_T(sequences):
             else:
                 break
     return zeros
-
+# to be deleted
 def CVRP_QAP(task_matrix, iteration=5, inner_cvrp_timewall=2, final_cvrp_timewall=10, ipfp_maxiter=50):
     task_matrix[task_matrix>0] = 1
     jobs = np.argwhere(task_matrix)
