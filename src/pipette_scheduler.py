@@ -120,7 +120,7 @@ def CVRP_pipette_scheduling(
     Args:
         task_matrix: matrix of size $n^{src} \times n^{dst}$, where a non-zero element at (a, b) means the volume 
             (in uL) to move from well a in source plate to well b in destination plate. The dimensions of 
-            task_matrix are used to infer the labware used (supported labwares: 12，24，96，384，1536)
+            task_matrix are used to infer the labware used (supported labwares: 12, 24, 96, 384, 1536)
         aspirate_t: time needed (in seconds) to move tips down, move tips up and move arm in one aspiration 
             operation. It is $t_1 + t_3 + t_4$ as described in the paper.
         aspirate_speed: the speed (in uL/s) for aspiration. ``volume / aspirate_speed`` is the $t_2$ as described 
