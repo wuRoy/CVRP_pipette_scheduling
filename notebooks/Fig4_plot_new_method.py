@@ -60,7 +60,7 @@ for labware_combination in labware_combinations:
             # calculate distance matrix
             D_prime = calculate_D_prime(D_S, D_D, S, E, volumes, 1, 100, 1, 100)
             # VRP solver
-            VRP_distance, VRP_recorder = CVRP_solver((D_prime * 100).astype(np.int64), solving_time=20)
+            VRP_distance, VRP_recorder = CVRP_solver(np.round(D_prime * 100).astype(np.int64), solving_time=20)
             VRP_distance = VRP_distance / 100
             print(f'VRP_distance: {VRP_distance}')
             # calculate the cost of the non-optimized sequence
@@ -71,10 +71,8 @@ for labware_combination in labware_combinations:
                 tasks = np.pad(tasks, (0, 8-tasks.shape[0]%8), 'constant', constant_values=-1)
             unoptimized_seuqnece = tasks.reshape(-1, 8)
             t = calculate_T_test(unoptimized_seuqnece)
-            d = D_prime
-            non_optimized_distance = np.trace(np.dot(t.T, d))
-            # change non_optimized_distance to integer
-            non_optimized_distance = int(non_optimized_distance)
+            d = np.round(D_prime * 100)
+            non_optimized_distance = np.trace(np.dot(t.T, d))/100
             print(f'non_optimized_distance: {non_optimized_distance}')
             
             # calculate the cost of the row-wise optimized sequence
@@ -86,7 +84,7 @@ for labware_combination in labware_combinations:
                 row_wise_optimized_sequence = np.pad(row_wise_optimized_sequence, (0, 8-row_wise_optimized_sequence.shape[0]%8), 'constant', constant_values=-1)
             row_wise_optimized_sequence = row_wise_optimized_sequence.reshape(-1, 8)
             t = calculate_T_test(row_wise_optimized_sequence)
-            row_wise_optimized_distance = np.trace(np.dot(t.T, d))
+            row_wise_optimized_distance = np.trace(np.dot(t.T, d))/100
             # change non_optimized_distance to integer
             row_wise_optimized_distance = int(row_wise_optimized_distance)
             print(f'row_wise_optimized_distance: {row_wise_optimized_distance}')
@@ -95,7 +93,7 @@ for labware_combination in labware_combinations:
             greedy_optimized_sequence = greedy_scheduling(jobs, d)
             if greedy_optimized_sequence.shape[0] %8 != 0:
                 greedy_optimized_sequence = np.pad(greedy_optimized_sequence, (0, 8-greedy_optimized_sequence.shape[0]%8), 'constant', constant_values=-1)
-            greedy_optimized_sequence = greedy_optimized_sequence.reshape(-1, 8)
+            greedy_optimized_sequence = greedy_optimized_sequence.reshape(-1, 8)/100
             t = calculate_T_test(greedy_optimized_sequence)
             greedy_optimized_distance = np.trace(np.dot(t.T, d))
             print(f'greedy_optimized_distance: {greedy_optimized_distance}')
