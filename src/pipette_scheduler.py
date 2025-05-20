@@ -166,7 +166,7 @@ def CVRP_pipette_scheduling(
     D_prime = calculate_D_prime(D_S, D_D, S, E, volumes, aspirate_t, aspirate_speed, dispense_t, dispense_speed)
 
     # solve CVRP
-    optimized_distance, recorder = CVRP_solver((D_prime * 10 ** decimal_points).astype(np.int64), solving_time=cvrp_timewall)
+    optimized_distance, recorder = CVRP_solver(np.round(D_prime * 10 ** decimal_points).astype(np.int64), solving_time=cvrp_timewall)
     optimized_distance /= 10 ** decimal_points
 
     optimized_seuqnecess = get_optimized_sequence(recorder)
