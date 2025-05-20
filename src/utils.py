@@ -226,7 +226,7 @@ def get_optimized_sequence(recorder):
 
 def print_command(flatten_sequence, jobs, source_name='source',dest_name='dest', volume=None):
     '''
-        flatten_sequence: the optimized sequence
+        flatten_sequence: the optimized sequence, start from 0
         jobs: the job pair
         total_volume: the total volume of the system
     

@@ -59,7 +59,7 @@ def row_wise_optimization(index_matrix):
             else:
                 count += 1
                 continue
-    elif mat.shape[1] == 384:
+    elif n_rows == 384:
         # if the matrix is larger than 384, use a different strategy
         while mat.sum() != 0:
             # if the sum of even rows is larger than 0
@@ -103,7 +103,7 @@ def row_wise_optimization(index_matrix):
                 count += 2
                 continue
 
-    elif mat.shape[1] == 1536:
+    elif n_rows == 1536:
         # if the matrix is larger than 384, use a different strategy
         while mat.sum() != 0:
             # if the sum of even rows is larger than 0

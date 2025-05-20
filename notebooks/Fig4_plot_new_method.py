@@ -1,11 +1,30 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
 from ortools_solver import CVRP_solver
 from utils import random_choose_candidate_2
-from QAP_solver import calculate_D, calculate_S_E, calculate_D_prime,add_depot,calculate_T
+from pipette_scheduler import calculate_D, calculate_S_E, calculate_D_prime,calculate_T
 from optimization_methods import row_wise_optimization, greedy_scheduling
 import pandas as pd
+
+def calculate_T_test(sequences):
+    # the matrix should be paddled with -1, return a n*n matrix
+    # sequences is a n*8 matrix
+    # which job are next to each other
+    sequences_flat = sequences.flatten()
+    sequences_flat = sequences_flat[sequences_flat != -1]
+    
+    zeros = np.zeros((sequences_flat.shape[0]+1,sequences_flat.shape[0]+1))
+    for sequence in sequences:
+        # link the depot with the first job in a cycle
+        zeros[0,sequence[0]] = 1
+        for i in range(sequence.shape[0]-1):
+            if sequence[i] != -1 and sequence[i+1] != -1:
+                zeros[sequence[i],sequence[i+1]] = 1
+            else:
+                # link the last job with the depot in a cycle
+                zeros[sequence[i],0] = 1
+                break
+    return zeros
 
 labware_list =[12,24,96,384]
 # enumerate all the two combinations of the labware_list

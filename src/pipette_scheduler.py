@@ -1,11 +1,31 @@
 import numpy as np
 import pygmtools as pygm
-from src.ortools_solver import CVRP_solver
-from src.utils import calculate_num_rows
+from ortools_solver import CVRP_solver
+from utils import calculate_num_rows
 
 pygm.set_backend('numpy') # set default backend for pygmtools
 np.random.seed(42) # fix random seed
 
+
+def calculate_T_test(sequences):
+    # the matrix should be paddled with -1, return a n*n matrix
+    # sequences is a n*8 matrix
+    # which job are next to each other
+    sequences_flat = sequences.flatten()
+    sequences_flat = sequences_flat[sequences_flat != -1]
+    
+    zeros = np.zeros((sequences_flat.shape[0]+1,sequences_flat.shape[0]+1))
+    for sequence in sequences:
+        # link the depot with the first job in a cycle
+        zeros[0,sequence[0]] = 1
+        for i in range(sequence.shape[0]-1):
+            if sequence[i] != -1 and sequence[i+1] != -1:
+                zeros[sequence[i],sequence[i+1]] = 1
+            else:
+                # link the last job with the depot in a cycle
+                zeros[sequence[i],0] = 1
+                break
+    return zeros
 
 def calculate_S_E(a):
     # a the jobs matrix, row is the source, column is the destination
