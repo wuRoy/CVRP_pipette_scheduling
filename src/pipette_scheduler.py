@@ -1,9 +1,8 @@
 import numpy as np
-import pygmtools as pygm
+
 from ortools_solver import CVRP_solver
 from utils import calculate_num_rows
 
-pygm.set_backend('numpy') # set default backend for pygmtools
 np.random.seed(42) # fix random seed
 
 

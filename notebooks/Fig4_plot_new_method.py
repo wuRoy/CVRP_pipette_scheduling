@@ -43,12 +43,12 @@ for labware_combination in labware_combinations:
     source_dim = labware_combination[0]
     dest_dim = labware_combination[1]
     print(f'source_dim={source_dim}, dest_dim={dest_dim}')
-    for r in range(1):
+    for r in range(3):
         print('repeat:',r+1)
         stats = []
         for i in range(1, 11):
 
-            num_candidates = dest_dim * i -5
+            num_candidates = dest_dim * i
             num_candidates = int(num_candidates)
             print(f'num_candidates={num_candidates}')
             a = random_choose_candidate_2(source_dim,dest_dim,num_candidates)
@@ -93,9 +93,9 @@ for labware_combination in labware_combinations:
             greedy_optimized_sequence = greedy_scheduling(jobs, d)
             if greedy_optimized_sequence.shape[0] %8 != 0:
                 greedy_optimized_sequence = np.pad(greedy_optimized_sequence, (0, 8-greedy_optimized_sequence.shape[0]%8), 'constant', constant_values=-1)
-            greedy_optimized_sequence = greedy_optimized_sequence.reshape(-1, 8)/100
+            greedy_optimized_sequence = greedy_optimized_sequence.reshape(-1, 8)
             t = calculate_T_test(greedy_optimized_sequence)
-            greedy_optimized_distance = np.trace(np.dot(t.T, d))
+            greedy_optimized_distance = np.trace(np.dot(t.T, d))/100
             print(f'greedy_optimized_distance: {greedy_optimized_distance}')
             # append the results to the df
             stats.append([source_dim, dest_dim, num_candidates, r+1, non_optimized_distance, row_wise_optimized_distance, greedy_optimized_distance, VRP_distance])

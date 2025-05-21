@@ -241,7 +241,7 @@ def print_command(flatten_sequence, jobs, source_name='source',dest_name='dest',
                     jobs[flatten_sequence[i],0]+1,
                     dest_name,
                     jobs[flatten_sequence[i],1]+1,
-                    volume[i]
+                    volume[flatten_sequence[i]]
                 ]
             )
         else:
