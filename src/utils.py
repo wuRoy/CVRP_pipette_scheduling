@@ -6,7 +6,7 @@ def show_matrix(matrix):
     plt.imshow(matrix, cmap='hot', interpolation='nearest')
     plt.show()
 
-def random_choose_candidate_2(source_dim,dest_dim,non_zeros_num):
+def random_choose_candidate_2(source_dim,dest_dim,non_zeros_num,if_random_volume=True):
     '''
     num_candidate: number of candidate to be chosen
     total_candidate: total number of candidates
@@ -16,10 +16,31 @@ def random_choose_candidate_2(source_dim,dest_dim,non_zeros_num):
     # repeat the random_choice function for num_candidate times
     a = np.zeros((source_dim,dest_dim))
     # randomly choose non_zeros_dim elements in the matrix as 1
+    while non_zeros < non_zeros_num:
+        i = np.random.randint(0, source_dim)
+        j = np.random.randint(0, dest_dim)
+        if a[i,j] == 0:
+            if if_random_volume:
+                # randomly choose the volume between 1 and 100
+                a[i,j] = np.random.randint(1, 100)
+            else:
+                a[i,j] = 1
+            non_zeros += 1
+    return a
+
+def random_choose_candidate_3(source_dim,dest_dim,non_zeros_num,if_random_volume=True):
+    non_zeros =0
+    # repeat the random_choice function for num_candidate times
+    a = np.zeros((source_dim,dest_dim))
+    # randomly choose non_zeros_dim elements in the matrix as 1 
     for i in range(source_dim):
         for j in range(dest_dim):
             if np.random.rand() >(1-non_zeros_num/(source_dim*dest_dim)):
-                a[i,j] = np.random.randint(1, 100)
+                if if_random_volume:
+                    # randomly choose the volume between 1 and 100
+                    a[i,j] = np.random.randint(1, 100)
+                else:
+                    a[i,j] = 1
                 non_zeros += 1
             if non_zeros >= non_zeros_num:
                 break
@@ -65,7 +86,7 @@ def random_choice_backup(total_elements, chosen_elements):
     a[:chosen_elements] = random_vector
     np.random.shuffle(a)
     return a
-
+# to be deleted
 def random_choose_candidate_backup(source_dim,dest_dim,non_zeros_dim): 
     '''
     num_candidate: number of candidate to be chosen
@@ -90,8 +111,8 @@ def calculate_num_rows(labware):
     labware: the labware, could be 12, 24, 96, 384
     return the criteria of the neighborhood
     '''
-    if labware not in [12, 24, 96, 384,1536]:
-        raise ValueError("labware should be one of [12, 24, 96, 384]")
+    if labware not in [12, 24, 96, 384, 1536]:
+        raise ValueError("labware should be one of [12, 24, 96, 384, 1536]")
     if labware == 12:
         return 3
     elif labware == 24:
@@ -203,9 +224,9 @@ def get_optimized_sequence(recorder):
     optimized_seuqneces = np.array(optimized_seuqnece[::-1])
     return optimized_seuqneces
 
-def print_command(flatten_sequence, jobs, source_name='source',dest_name='dest', total_volume=20):
+def print_command(flatten_sequence, jobs, source_name='source',dest_name='dest', volume=None):
     '''
-        flatten_sequence: the optimized sequence
+        flatten_sequence: the optimized sequence, start from 0
         jobs: the job pair
         total_volume: the total volume of the system
     
@@ -213,14 +234,25 @@ def print_command(flatten_sequence, jobs, source_name='source',dest_name='dest',
     command_line = []
     for i in range(flatten_sequence.shape[0]):
     # add the command line base on the index, set the volume as 20ul by default
-        command_line.append(
-            [
-                source_name,
-                jobs[flatten_sequence[i],0]+1,
-                dest_name,
-                jobs[flatten_sequence[i],1]+1,
-                20
-            ]
-        )
+        if volume is not None:
+            command_line.append(
+                [
+                    source_name,
+                    jobs[flatten_sequence[i],0]+1,
+                    dest_name,
+                    jobs[flatten_sequence[i],1]+1,
+                    volume[flatten_sequence[i]]
+                ]
+            )
+        else:
+            command_line.append(
+                [
+                    source_name,
+                    jobs[flatten_sequence[i],0]+1,
+                    dest_name,
+                    jobs[flatten_sequence[i],1]+1,
+                    20
+                ]
+            )
     command_line = np.array(command_line) 
     return command_line

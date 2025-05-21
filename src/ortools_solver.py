@@ -5,6 +5,7 @@ from ortools.constraint_solver import pywrapcp
 
 """Capacited Vehicles Routing Problem (CVRP)."""
 
+
 def create_data_model(distance_matrix):
     """Stores the data for the problem."""
     data = {}
@@ -49,6 +50,7 @@ def print_solution_backup(data, manager, routing, solution):
     print(f"Total distance of all routes: {total_distance}m")
     print(f"Total load of all routes: {total_load}")
     return total_distance,recorder
+
 
 def print_solution(data, manager, routing, solution, print_result=True):
     """Prints solution on console."""
@@ -148,4 +150,3 @@ def CVRP_solver(distance_matrix, solving_time=10, print_result=False):
     if solution:
         distance,recorder = print_solution(data, manager, routing, solution, print_result)
         return distance, recorder
-    
