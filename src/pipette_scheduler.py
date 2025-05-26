@@ -1,14 +1,15 @@
 import numpy as np
 
 from ortools_solver import CVRP_solver
-from utils import calculate_num_rows
+from utils import calculate_num_rows, get_optimized_sequence
+
 
 np.random.seed(42) # fix random seed
 
 
-def calculate_T(sequences):
+def calculate_X(sequences):
 
-    """Calculate matrix T which defines adjacency of two liquid transfers in the sequence.
+    """Calculate matrix X which defines adjacency of two liquid transfers in the sequence.
     
     This function creates a transition matrix that represents which jobs follow each other
     in the optimized sequences. The depot (index 0) is connected to the first job in each
