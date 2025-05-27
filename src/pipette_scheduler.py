@@ -217,5 +217,5 @@ def CVRP_pipette_scheduling(
 
     optimized_seuqnecess = get_optimized_sequence(recorder)
 
-    return optimized_distance, optimized_seuqnecess
+    return optimized_distance, optimized_seuqnecess,
 
