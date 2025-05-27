@@ -15,7 +15,7 @@ This project implements pipette scheduling optimization for laboratory automatio
 
 1. **Clone the repository** (if applicable):
 ```bash
-git clone <repository-url>
+git clone git@github.com:wuRoy/CVRP_pipette_scheduling.git
 cd pipette_scheduling
 ```
 
