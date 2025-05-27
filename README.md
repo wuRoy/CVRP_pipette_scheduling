@@ -31,6 +31,13 @@ conda activate <name-of-your-environment>
 pip install -r requirements.txt
 ```
 
+4. **Install the Project in Development Mode**  
+
+Install the package locally with:
+```bash
+python setup.py develop
+```
+
 ## Quick Start
 
 Because different liquid handlers use different worklist formats, we provide an interactive notebook (```pipette_scheduling/notebooks/demo.ipynb```) that allows you to specify your own output format.
