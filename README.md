@@ -1,4 +1,3 @@
-``Pipette Scheduling Optimization
 # Optimization of Robotic Liquid Handling as a Capacitated Vehicle Routing Problem
 
 ## Overview
@@ -20,7 +19,7 @@ git clone <repository-url>
 cd pipette_scheduling
 ```
 
-2. **Create a virtual environment** (recommended):
+2. **Create a virtual environment** (recommended, please [install ``conda``](https://conda-forge.org/download/) beforehand):
 ```bash
 conda create --name <name-of-your-environment> python=3.9
 conda activate <name-of-your-environment>
