@@ -1,4 +1,4 @@
-iteration,number of jobs,Aspiration speed,Dispensing speed,Overhead time,unoptimized,rowwise,greedy,VRP
+iteration,number of jobs,Aspiration speed,Dispensing speed,Overhead time,row-major sorting,LAP,greedy,CVRP
 1,88,100,100,1,181,181,657,181
 2,309,100,100,1,2877,2313,3122,2026
 3,293,100,100,1,2779,2668,2992,2088
